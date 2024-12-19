@@ -20,7 +20,7 @@ public class RandomMinutes {
             throw new IllegalArgumentException("No even numbers in the given range");
         }
 
-        int randomEven = random.nextInt((adjustedMax - adjustedMin) / 2 + 1) * 2 + adjustedMin;
+        int randomEven = random.nextInt(adjustedMax - adjustedMin);
         return randomEven;
     }
 }
