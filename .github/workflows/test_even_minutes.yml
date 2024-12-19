@@ -1,0 +1,29 @@
+name: Test Even Minutes
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-even-minute:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+
+      - name: Install dependencies
+        run: mvn install
+
+      - name: Test Even Minute
+        run: |
+          mvn test -Dtest=EvenMinuteTest
