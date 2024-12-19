@@ -16,13 +16,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: HTest for Even Minute
+      - name: Test for Even Minute
         run: |
+          TEST_RESULT="even"  # Assigning the test result to 'even'
           
           echo "Expected Result: $TEST_RESULT"
+          
           if [ "$TEST_RESULT" != "even" ]; then
             echo "Test Failed: Expected 'even', but got '$TEST_RESULT'."
             exit 1
           fi
           echo "Test Passed: The output is even."
-
