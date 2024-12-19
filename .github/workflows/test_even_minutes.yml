@@ -18,7 +18,7 @@ jobs:
 
       - name: Test for Even Minute
         run: |
-          TEST_RESULT="even"  # Assigning the test result to 'even'
+          TEST_RESULT="even"
           
           echo "Expected Result: $TEST_RESULT"
           
