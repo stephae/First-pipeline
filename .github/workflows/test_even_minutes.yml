@@ -16,6 +16,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Test Even Minute
+      - name: HTest for Even Minute
         run: |
-          mvn test -Dtest=EvenMinuteTest
+          
+          echo "Expected Result: $TEST_RESULT"
+          if [ "$TEST_RESULT" != "even" ]; then
+            echo "Test Failed: Expected 'even', but got '$TEST_RESULT'."
+            exit 1
+          fi
+          echo "Test Passed: The output is even."
+
